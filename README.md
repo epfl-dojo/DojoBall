@@ -1,2 +1,2 @@
 # DojoBall
-The next viral we game
+The next viral web game
