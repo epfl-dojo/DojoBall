@@ -2,7 +2,6 @@ console.log('Dojo Ball')
 
 import './assets/style.css'
 
-
 // Tweakables
 const stiffness = 800
 const impactVelocityCompressionMultiplier = 0.01
