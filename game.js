@@ -1,5 +1,8 @@
 console.log('Dojo Ball')
 
+import './assets/style.css'
+
+
 // Tweakables
 const stiffness = 800
 const impactVelocityCompressionMultiplier = 0.01
@@ -11,7 +14,7 @@ const mouseKick = 120
 const minYToScore = 2
 const minClicksToScore = 2
 
-const { easing, physics, spring, tween, styler, listen, value, transform } = window.popmotion
+import { easing, physics, spring, tween, styler, listen, value, transform } from 'popmotion'
 const { pipe, clampMax } = transform
 
 const ball = document.querySelector('.ball')
