@@ -22,12 +22,19 @@ const ballScale = value(1, (v) => {
   ballStyler.set('scaleX', 1 + (1 - v))
   ballStyler.set('scaleY', v)
 })
+
+console.log("start game")
+
+
 let count = 0
-let highScore = 0
+let highScore = localStorage.getItem('highscore') || 0
 let currentScore = 0
 let tapScore = 0
 let lowY = 0
 let isFalling = false
+
+
+$('#highScore').text(highScore)
 
 const ballY = value(0, (v) => {
   ballStyler.set('y', Math.min(0, v))
@@ -85,6 +92,8 @@ const checkFail = () => {
     }).start(ballBorder)
 
     ball.innerHTML = 'Tap'
+    currentScore = 0
+    $('#currentScore').text(currentScore)
   }
 }
 
@@ -110,6 +119,7 @@ function setScore (taps, y) {
   $('#currentScore').text(currentScore)
   if (highScore < currentScore) {
     highScore = currentScore
+    localStorage.setItem("highscore", highScore)
     $('#highScore').text(highScore)
   }
 }
